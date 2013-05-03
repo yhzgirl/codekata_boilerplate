@@ -14,22 +14,44 @@ describe 'fizzbuzz' do
 
   describe '#is_dividable_by_three' do
     context 'if number is divdable by 3' do
-      it 'prints fizz when dividable by 3' do
+      it 'prints fizz' do
         fizzbuzz.dividable_by_three?(3).should eq('fizz')    
       end
+    end
 
-      it 'prints number when not dividable by 3' do
+    context 'if number is not dividable by three' do
+      it 'prints number' do
         fizzbuzz.dividable_by_three?(7).should eq(7)
       end
+    end
+  end
 
-      it 'prints buzz when dividable by 5' do
+  describe '#dividable_by_five' do
+    context 'if number is dividable by 5' do
+      it 'prints buzz' do
         fizzbuzz.dividable_by_five?(5).should eq('buzz')
       end
+    end
 
-      it 'prints number when not dividable_by_five' do
+    context 'if number is not dividable by 5' do
+      it 'prints number' do
         fizzbuzz.dividable_by_five?(7).should eq(7)
       end
     end
-  end  
+  end
+
+    describe '#dividable_by_fifteen' do
+      context 'when dividable by fifteen' do
+        it 'prints fizzbuzz' do
+          fizzbuzz.dividable_by_fifteen(30).should eq('fizzbuzz')
+        end
+      end
+
+      context 'if number not dividable by fifteen' do
+        it 'prints number' do
+          fizzbuzz.dividable_by_fifteen(19).should eq(19)
+        end
+      end
+    end
 end
 
